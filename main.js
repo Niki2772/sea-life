@@ -1,59 +1,23 @@
 $(document).ready(function () {
-    $('.image').click(function () { 
-        $('.overlay').fadeIn(500);
-        $('.popup').fadeIn(500);
-    });
-    $('.close-btn').click(function () { 
-        $('.overlay').fadeOut(500);
-        $('.popup').fadeOut(500);
-    });
-
-    $('.overlay').click(function () { 
-        $('.overlay').fadeOut(500);
-        $('.popup').fadeOut(500);
-    });
-
-    $('#whale').click(function () { 
-        $('.popup-whale').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-    $('#corals').click(function () { 
-        $('.popup-corals').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-
+    $(function(){
+        $('.minimized').click(function(event) {
+          var i_path = $(this).attr('src');
+          $('body').append('<div id="overlay"></div><div id="magnify"><img src="'+i_path+'"><div id="close-popup"><i></i></div></div>');
+          $('#magnify').css({
+              left: ($(document).width() - $('#magnify').outerWidth())/2,
+              // top: ($(document).height() - $('#magnify').outerHeight())/2 upd: 24.10.2016
+                  top: ($(window).height() - $('#magnify').outerHeight())/2
+            });
+          $('#overlay, #magnify').fadeIn('fast');
+        });
+        
+        $('body').on('click', '#close-popup, #overlay', function(event) {
+          event.preventDefault();
+       
+          $('#overlay, #magnify').fadeOut('fast', function() {
+            $('#close-popup, #magnify, #overlay').remove();
+          });
+        });
+      });
+       
 });
-
-/*    
-    $('#corals').click(function () { 
-        $('.popup-corals').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-    $('#diving').click(function () { 
-        $('.popup-diving').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-    $('#dolphin').click(function () { 
-        $('.popup-dolphin').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-    $('#fish').click(function () { 
-        $('.popup-fish').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-    $('#shells').click(function () { 
-        $('.popup-shells').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-    $('#star').click(function () { 
-        $('.popup-star').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-    $('#turtle').click(function () { 
-        $('.popup-turtle').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });
-    $('#waterplants').click(function () { 
-        $('.popup-waterplants').fadeIn(500);
-        $('.overlay').fadeIn(500);
-    });*/

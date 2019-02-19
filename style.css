@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -6,69 +6,79 @@
     box-sizing: border-box;
 }
 
-
-.overlay {
-    background-color: rgb(13, 13, 179);
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    opacity: .7;
-    display: none;
-
-}
-.popup {
-    height: 600px;
-    width: 900px;
-    
-    position: absolute;
-    border-right: 50px solid rgb(11, 11, 75);
-    border-left: 50px solid rgb(11, 11, 75);
-    border-top: 20px solid rgb(11, 11, 75);
-    border-bottom: 20px solid rgb(11, 11, 75);
-    top: 50%;
-    left: 50%;
-    transform: translate( -450px, -300px);
-    box-sizing: border-box;
-    display: none;
-}
-.close-btn {
-    width: 30px;
-    height:30px;
-    background-color: #000;
-    color: #fff;
-    font-size: 15px;
-    text-align: center;
-    line-height: 28px;
-    border: 1px solid #000;
-    border-radius: 50%;
-    position: absolute;
-    right: -65px;
-    top: -35px;
-    font-family: Helvetica;
-}
-.close-btn:hover {
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-
-.image {
+.minimized {
     width: 33.3%;
     height: 33.3%;
-    float: left;
-    border: transparent;
-}
-
-.image:hover {
     cursor: pointer;
-    border: 1px solid #fff;
+    border: .5px solid rgb(172, 189, 250);
+    ;
+    float: left;
 }
 
+.minimized:hover {
+    border: 1px solid rgb(172, 189, 250);
+}
 
+/* увеличенная картинка */
 
+#magnify {
+    display: none;
+    position: absolute;
+    max-width: 900px;
+    height: 600px;
+    z-index: 9999;
+    border: 15px solid rgb(5, 16, 56);
 
+}
 
+#magnify img {
+    width: 100%;
+}
 
+/* затемняющий фон */
+
+#overlay {
+    display: none;
+    background: rgba(36, 86, 250, 0.842);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+    z-index: 5;
+}
+
+/* кнопка закрытия */
+
+#close-popup {
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #AFAFAF;
+    border-radius: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+}
+
+#close-popup i {
+    width: 30px;
+    height: 30px;
+    background: url("images/close-btn-pic.jpg") no-repeat center center;
+    background-size: 30px 30px;
+    display: block;
+}
+
+@keyframes rota {
+    25% {
+        transform: rotate(360deg);
+    }
+}
+
+#close-popup:hover {
+    animation: rota 4s infinite normal;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
