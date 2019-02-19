@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.overlay {
+    background-color: rgb(13, 13, 179);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .7;
+    display: none;
+
+}
+.popup {
+    height: 600px;
+    width: 900px;
+    
+    position: absolute;
+    border-right: 50px solid rgb(11, 11, 75);
+    border-left: 50px solid rgb(11, 11, 75);
+    border-top: 20px solid rgb(11, 11, 75);
+    border-bottom: 20px solid rgb(11, 11, 75);
+    top: 50%;
+    left: 50%;
+    transform: translate( -450px, -300px);
+    box-sizing: border-box;
+    display: none;
+}
+.close-btn {
+    width: 30px;
+    height:30px;
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    line-height: 28px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    right: -65px;
+    top: -35px;
+    font-family: Helvetica;
+}
+.close-btn:hover {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.image {
+    width: 33.3%;
+    height: 33.3%;
+    float: left;
+    border: transparent;
+}
+
+.image:hover {
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+
+
+
+
+
